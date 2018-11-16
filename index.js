@@ -3,6 +3,10 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser'); // parses incoming requests into JSON
 const morgan = require('morgan'); // logging framework
+const mongoose = require('mongoose');
+
+// DB Setup
+mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true });
 
 const app = express();
 const router = require('./router'); // add router
