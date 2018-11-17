@@ -17,3 +17,21 @@ $ mongod
 
 * `Cookies` - Automatically included on all requests, Unique to each domain, cannot send to different domains
 * `Token` - Have to manually wire up, can be sent to any domain
+
+`JSON WEB TOKEN` - `JWT`
+
+Signing up or signing in:
+
+```
+User ID + Secret String = JSON WEB TOKEN
+
+```
+
+When the user makes authenticated requests
+
+```
+JSON WEB TOKEN + Secret String = User ID
+
+```
+
+[JWT Information](https://jwt.io/s)
