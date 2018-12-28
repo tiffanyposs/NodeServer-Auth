@@ -4,6 +4,7 @@ const http = require('http');
 const bodyParser = require('body-parser'); // parses incoming requests into JSON
 const morgan = require('morgan'); // logging framework
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true });
@@ -15,6 +16,7 @@ const router = require('./router'); // add router
 
 // Middleware - any incoming request will be passed into these middlewares
 app.use(morgan('combined')); // add logging framework
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' })); // add parsing to all requests into JSON
 
 router(app); // include router
